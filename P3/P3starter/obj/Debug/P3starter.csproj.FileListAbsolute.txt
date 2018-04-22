@@ -1,0 +1,73 @@
+P:\P3starter\P3starter\bin\Debug\P3starter.exe.config
+P:\P3starter\P3starter\bin\Debug\P3starter.exe
+P:\P3starter\P3starter\bin\Debug\P3starter.pdb
+P:\P3starter\P3starter\obj\Debug\P3starter.csprojResolveAssemblyReference.cache
+P:\P3starter\P3starter\obj\Debug\P3starter.Main.resources
+P:\P3starter\P3starter\obj\Debug\P3starter.Properties.Resources.resources
+P:\P3starter\P3starter\obj\Debug\P3starter.csproj.GenerateResource.Cache
+P:\P3starter\P3starter\obj\Debug\P3starter.exe
+P:\P3starter\P3starter\obj\Debug\P3starter.pdb
+P:\P3starter\P3starter\bin\Debug\Newtonsoft.Json.dll
+P:\P3starter\P3starter\bin\Debug\Newtonsoft.Json.xml
+P:\P3starter2175Part1\P3starter\P3starter\bin\Debug\P3starter.exe.config
+P:\P3starter2175Part1\P3starter\P3starter\obj\Debug\P3starter.exe
+P:\P3starter2175Part1\P3starter\P3starter\obj\Debug\P3starter.pdb
+P:\P3starter2175Part1\P3starter\P3starter\bin\Debug\P3starter.exe
+P:\P3starter2175Part1\P3starter\P3starter\bin\Debug\P3starter.pdb
+P:\P3starter2175Part1\P3starter\P3starter\bin\Debug\Newtonsoft.Json.dll
+P:\P3starter2175Part1\P3starter\P3starter\bin\Debug\Newtonsoft.Json.xml
+P:\P3starter2175Part1\P3starter\P3starter\obj\Debug\P3starter.csprojResolveAssemblyReference.cache
+P:\P3starter2175Part1\P3starter\P3starter\obj\Debug\P3starter.Main.resources
+P:\P3starter2175Part1\P3starter\P3starter\obj\Debug\P3starter.Properties.Resources.resources
+P:\P3starter2175Part1\P3starter\P3starter\obj\Debug\P3starter.csproj.GenerateResource.Cache
+P:\P3starter2175Finished\P3starter\P3starter\bin\Debug\P3starter.exe.config
+P:\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.exe
+P:\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.pdb
+P:\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.csprojResolveAssemblyReference.cache
+P:\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.Main.resources
+P:\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.Properties.Resources.resources
+P:\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.csproj.GenerateResource.Cache
+P:\P3starter2175Finished\P3starter\P3starter\bin\Debug\P3starter.exe
+P:\P3starter2175Finished\P3starter\P3starter\bin\Debug\P3starter.pdb
+P:\P3starter2175Finished\P3starter\P3starter\bin\Debug\Newtonsoft.Json.dll
+P:\P3starter2175Finished\P3starter\P3starter\bin\Debug\RESTUtil.dll
+P:\P3starter2175Finished\P3starter\P3starter\bin\Debug\Newtonsoft.Json.xml
+P:\P3starter2175Finished\P3starter\P3starter\bin\Debug\RESTUtil.pdb
+P:\P3starter2175Part1\P3starter2175Finished\P3starter\P3starter\bin\Debug\P3starter.exe.config
+P:\P3starter2175Part1\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.exe
+P:\P3starter2175Part1\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.pdb
+P:\P3starter2175Part1\P3starter2175Finished\P3starter\P3starter\bin\Debug\P3starter.exe
+P:\P3starter2175Part1\P3starter2175Finished\P3starter\P3starter\bin\Debug\P3starter.pdb
+P:\P3starter2175Part1\P3starter2175Finished\P3starter\P3starter\bin\Debug\Newtonsoft.Json.dll
+P:\P3starter2175Part1\P3starter2175Finished\P3starter\P3starter\bin\Debug\RESTUtil.dll
+P:\P3starter2175Part1\P3starter2175Finished\P3starter\P3starter\bin\Debug\Newtonsoft.Json.xml
+P:\P3starter2175Part1\P3starter2175Finished\P3starter\P3starter\bin\Debug\RESTUtil.pdb
+P:\P3starter2175Part1\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.csprojResolveAssemblyReference.cache
+P:\P3starter2175Part1\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.Main.resources
+P:\P3starter2175Part1\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.Properties.Resources.resources
+P:\P3starter2175Part1\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.csproj.GenerateResource.Cache
+P:\P3starter_most_updated\P3starter_most_updated\P3starter2175Finished\P3starter\P3starter\bin\Debug\P3starter.exe.config
+P:\P3starter_most_updated\P3starter_most_updated\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.exe
+P:\P3starter_most_updated\P3starter_most_updated\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.pdb
+P:\P3starter_most_updated\P3starter_most_updated\P3starter2175Finished\P3starter\P3starter\bin\Debug\P3starter.exe
+P:\P3starter_most_updated\P3starter_most_updated\P3starter2175Finished\P3starter\P3starter\bin\Debug\P3starter.pdb
+P:\P3starter_most_updated\P3starter_most_updated\P3starter2175Finished\P3starter\P3starter\bin\Debug\Newtonsoft.Json.dll
+P:\P3starter_most_updated\P3starter_most_updated\P3starter2175Finished\P3starter\P3starter\bin\Debug\RESTUtil.dll
+P:\P3starter_most_updated\P3starter_most_updated\P3starter2175Finished\P3starter\P3starter\bin\Debug\Newtonsoft.Json.xml
+P:\P3starter_most_updated\P3starter_most_updated\P3starter2175Finished\P3starter\P3starter\bin\Debug\RESTUtil.pdb
+P:\P3starter_most_updated\P3starter_most_updated\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.csprojResolveAssemblyReference.cache
+P:\P3starter_most_updated\P3starter_most_updated\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.Main.resources
+P:\P3starter_most_updated\P3starter_most_updated\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.Properties.Resources.resources
+P:\P3starter_most_updated\P3starter_most_updated\P3starter2175Finished\P3starter\P3starter\obj\Debug\P3starter.csproj.GenerateResource.Cache
+C:\Users\Josh\Documents\school\Spring Semester 2018\Client Programming\P3\P3\P3starter\bin\Debug\P3starter.exe.config
+C:\Users\Josh\Documents\school\Spring Semester 2018\Client Programming\P3\P3\P3starter\obj\Debug\P3starter.exe
+C:\Users\Josh\Documents\school\Spring Semester 2018\Client Programming\P3\P3\P3starter\obj\Debug\P3starter.pdb
+C:\Users\Josh\Documents\school\Spring Semester 2018\Client Programming\P3\P3\P3starter\bin\Debug\P3starter.exe
+C:\Users\Josh\Documents\school\Spring Semester 2018\Client Programming\P3\P3\P3starter\bin\Debug\P3starter.pdb
+C:\Users\Josh\Documents\school\Spring Semester 2018\Client Programming\P3\P3\P3starter\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Josh\Documents\school\Spring Semester 2018\Client Programming\P3\P3\P3starter\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Josh\Documents\school\Spring Semester 2018\Client Programming\P3\P3\P3starter\bin\Debug\RESTUtil.pdb
+C:\Users\Josh\Documents\school\Spring Semester 2018\Client Programming\P3\P3\P3starter\obj\Debug\P3starter.csprojResolveAssemblyReference.cache
+C:\Users\Josh\Documents\school\Spring Semester 2018\Client Programming\P3\P3\P3starter\obj\Debug\P3starter.Main.resources
+C:\Users\Josh\Documents\school\Spring Semester 2018\Client Programming\P3\P3\P3starter\obj\Debug\P3starter.Properties.Resources.resources
+C:\Users\Josh\Documents\school\Spring Semester 2018\Client Programming\P3\P3\P3starter\obj\Debug\P3starter.csproj.GenerateResource.Cache
