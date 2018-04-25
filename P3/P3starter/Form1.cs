@@ -1,4 +1,10 @@
-﻿using Newtonsoft.Json.Linq;
+﻿// @author: Josh Schrader
+// Course: Client Programming Section 1
+// Professor: Michael Floeser
+// Due Date: April 30th, 2018
+
+
+using Newtonsoft.Json.Linq;
 using RESTUtil;
 using System;
 using System.Collections.Generic;
@@ -38,17 +44,11 @@ namespace P3starter
 
             // About title
             lbl_aboutTitle.Text = about.title;
-            lbl_aboutTitle.Font = new Font("Neo Sans", 9, FontStyle.Regular);
+            lbl_aboutTitle.Font = new Font("Trebuchet MS", 12, FontStyle.Regular);
             rtb_desc.Text = about.description;
             lbl_about_quoteAuthor.Text = about.quoteAuthor;
             tb_quote.Text = about.quote;
-            lbl_quote.Font = new Font("Neo Sans", 9, FontStyle.Regular);
-
-            // get resources, a link to click on 
-            string jsonRes = rest.getRESTData("/resources/");
-
-            // Get information out of the resources object
-            Resources resources = JToken.Parse(jsonRes).ToObject<Resources>();
+            lbl_quote.Font = new Font("Trebuchet MS", 12, FontStyle.Regular);
         }
 
 
@@ -67,7 +67,7 @@ namespace P3starter
                 var listView = Controls.Find("deg_listView" + (i), true).FirstOrDefault();
                 
                 label.Text = degree.undergraduate[i].title.ToUpper();
-                label.Font = new Font("Neo Sans", 9, FontStyle.Regular);
+                label.Font = new Font("Trebuchet MS", 9, FontStyle.Regular);
                 rtb.Text = degree.undergraduate[i].description;
 
             } //end undergrad for loop
@@ -140,7 +140,7 @@ namespace P3starter
                 if (i != degree.graduate.Count() - 1)
                 {
                     label.Text = degree.graduate[i].title.ToUpper();
-                    label.Font = new Font("Neo Sans", 9, FontStyle.Regular);
+                    label.Font = new Font("Trebuchet MS", 9, FontStyle.Regular);
                     rtb.Text = degree.graduate[i].description;
 
                 }
@@ -482,6 +482,277 @@ namespace P3starter
                 lbl_people_phone.Text = people.staff[index].phone;
                 lbl_people_email.Text = people.staff[index].email;
             }
+        }
+
+
+        // START OF RESEARCH
+        private void lbl_interest_lookup_Enter(object sender, EventArgs e)
+        {
+            string jsonResearch = rest.getRESTData("/research/");
+
+            Research research = JToken.Parse(jsonResearch).ToObject<Research>();
+            populateResearchCB(research);
+            dg_citations.Font = new Font("Trebuchet MS", 9, FontStyle.Regular);
+
+        }
+
+
+        // populate the look up combo boxes
+        public void populateResearchCB(Research research)
+        {
+
+            // populates the faculty combo box
+            for (var i = 0; i < research.byFaculty.Count; i++)
+            {
+                cb_fac_lookup.Items.Add(research.byFaculty[i].facultyName);
+            }
+
+            // populates the interest combo box
+            for (var i = 0; i < research.byInterestArea.Count; i++)
+            {
+                cb_int_lookup.Items.Add(research.byInterestArea[i].areaName);
+            }
+
+        }
+
+
+        // do stuff when there is a change in the combo box
+        private void cb_fac_lookup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedName = cb_fac_lookup.SelectedItem;
+            var selectedIndex = cb_fac_lookup.SelectedIndex;
+            string jsonResearch = rest.getRESTData("/research/");
+
+            Research research = JToken.Parse(jsonResearch).ToObject<Research>();
+            
+            lbl_lookup_info_header.Text = research.byFaculty[selectedIndex].facultyName;
+            dg_citations.Rows.Clear();
+            for (int i = 0; i < research.byFaculty[selectedIndex].citations.Count; i++)
+            {
+                dg_citations.Rows.Add();
+                dg_citations.Rows[i].Cells[0].Value = research.byFaculty[selectedIndex].citations[i];
+            } // end for
+
+        }
+
+        private void cb_int_lookup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedName = cb_int_lookup.SelectedItem;
+            var selectedIndex = cb_int_lookup.SelectedIndex;
+            string jsonResearch = rest.getRESTData("/research/");
+
+            Research research = JToken.Parse(jsonResearch).ToObject<Research>();
+
+            lbl_lookup_info_header.Text = research.byInterestArea[selectedIndex].areaName;
+            dg_citations.Rows.Clear();
+            for (int i = 0; i < research.byInterestArea[selectedIndex].citations.Count; i++)
+            {
+                dg_citations.Rows.Add();
+                dg_citations.Rows[i].Cells[0].Value = research.byInterestArea[selectedIndex].citations[i];
+            } // end for
+        }
+
+
+
+        private Resources resources = null;
+
+        private void loadResourcesData()
+        {
+
+            // Have we loaded the data before
+            if (resources == null)
+            {
+                string jsonRes = rest.getRESTData("/resources/");
+
+                resources = JToken.Parse(jsonRes).ToObject<Resources>();
+            }
+        }
+
+
+
+        private void tab_Resources_Enter(object sender, EventArgs e)
+        {
+
+            loadResourcesData();
+
+            res_header.Text = resources.title;
+            lbl_resources_header.Text = resources.title;
+            lbl_resources_header.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_resources_footnote.Text = resources.subTitle;
+            lbl_resources_footnote.TextAlign = ContentAlignment.MiddleCenter;
+
+            btn_res_coop_enroll.Text = resources.coopEnrollment.title;
+            btn_res_forms.Text = "Forms";
+            btn_res_tutors.Text = resources.tutorsAndLabInformation.title;
+            btn_res_study_abroad.Text = resources.studyAbroad.title;
+            btn_res_sas.Text = resources.studentServices.title;
+            btn_res_saia.Text = resources.studentAmbassadors.title;
+            pictureBox1.Visible = false;
+
+        }
+
+        // when the coop enrollment button is clicked
+        private void btn_res_coop_enroll_Click(object sender, EventArgs e)
+        {
+            dgv_res_section.Rows.Clear();
+            lbl_res_sec_header.Text = resources.coopEnrollment.title;
+            lbl_res_dgv.Text = "";
+            rtb_res_section.Clear();
+            for (var i = 0; i < resources.coopEnrollment.enrollmentInformationContent.Count; i++) {
+                Label secHeader = new Label();
+                secHeader.Text = resources.coopEnrollment.enrollmentInformationContent[i].title + "\n";
+                rtb_res_section.Text += secHeader.Text;
+                rtb_res_section.Text += resources.coopEnrollment.enrollmentInformationContent[i].description + "\n\n";
+            }
+        }
+
+        // when the forms button is clicked
+        private void btn_res_forms_Click(object sender, EventArgs e)
+        {
+            dgv_res_section.Rows.Clear();
+            lbl_res_dgv.Text = "";
+            lbl_res_sec_header.Text = "Forms";
+            rtb_res_section.Clear();
+            for (var i = 0; i < resources.forms.graduateForms.Count; i++)
+            {
+                Label secHeader = new Label();
+                secHeader.Text = resources.forms.graduateForms[i].formName + "\n";
+
+                LinkLabel formURL = new LinkLabel();
+                formURL.Text = "ist.rit.edu/" + resources.forms.graduateForms[i].href;
+                rtb_res_section.Text += secHeader.Text;
+                rtb_res_section.Text += formURL.Text + "\n\n";
+            }
+        }
+
+        // when the tutor button is clicked
+        private void btn_res_tutors_Click(object sender, EventArgs e)
+        {
+            lbl_res_dgv.Text = "";
+            dgv_res_section.Rows.Clear();
+            rtb_res_section.Clear();
+
+            lbl_res_sec_header.Text = resources.tutorsAndLabInformation.title;
+            rtb_res_section.Text = resources.tutorsAndLabInformation.description;
+        }
+
+        // when the study abroad button is clicked
+        private void btn_res_study_abroad_Click(object sender, EventArgs e)
+        {
+            lbl_res_dgv.Text = "";
+            dgv_res_section.Rows.Clear();
+            rtb_res_section.Clear();
+
+            lbl_res_sec_header.Text = resources.studyAbroad.title;
+            rtb_res_section.Text += resources.studyAbroad.description + "\n\n";
+
+            for (var i = 0; i < resources.studyAbroad.places.Count; i++)
+            {
+                rtb_res_section.Text += resources.studyAbroad.places[i].nameOfPlace + "\n";
+                rtb_res_section.Text += resources.studyAbroad.places[i].description + "\n\n";
+            }
+            
+        }
+
+        // when the student advising services is clicked
+        private void btn_res_sas_Click(object sender, EventArgs e)
+        {
+            rtb_res_section.Clear();
+            lbl_res_dgv.Text = resources.studentServices.professonalAdvisors.title;
+            lbl_res_sec_header.Text = resources.studentServices.title;
+            rtb_res_section.Text += resources.studentServices.academicAdvisors.title + "\n";
+            rtb_res_section.Text += resources.studentServices.academicAdvisors.description + "\n\n";
+
+            dgv_res_section.ColumnCount = 3;
+            dgv_res_section.Columns[0].Name = "Name";
+            dgv_res_section.Columns[1].Name = "Department";
+            dgv_res_section.Columns[2].Name = "Email";
+            for (var i = 0; i < resources.studentServices.professonalAdvisors.advisorInformation.Count; i++)
+            {
+                dgv_res_section.Rows.Add();
+                dgv_res_section.Rows[i].Cells[0].Value = resources.studentServices.professonalAdvisors.advisorInformation[i].name;
+                dgv_res_section.Rows[i].Cells[1].Value = resources.studentServices.professonalAdvisors.advisorInformation[i].department;
+                dgv_res_section.Rows[i].Cells[2].Value = resources.studentServices.professonalAdvisors.advisorInformation[i].email;
+            }
+        }
+
+        // when the student ambassador button is clicked
+        private void btn_res_saia_Click(object sender, EventArgs e)
+        {
+            dgv_res_section.Rows.Clear();
+            rtb_res_section.Clear();
+            lbl_res_sec_header.Text = resources.studentAmbassadors.title;
+
+            for (var i = 0; i < resources.studentAmbassadors.subSectionContent.Count; i++)
+            {
+                rtb_res_section.Text += resources.studentAmbassadors.subSectionContent[i].title + "\n";
+                rtb_res_section.Text += resources.studentAmbassadors.subSectionContent[i].description + "\n\n";
+            }
+        }
+
+        News news;
+        private void tab_News_Enter(object sender, EventArgs e)
+        {
+            string jsonNews = rest.getRESTData("/news/");
+            news = JToken.Parse(jsonNews).ToObject<News>();
+
+            populateNewsCB(news);
+        }
+
+
+        private void populateNewsCB(News news)
+        {
+            for (var i = 0; i < news.older.Count; i++)
+            {
+                cb_news_story.Items.Add(news.older[i].title);
+            }
+        }
+
+
+        private void cb_news_story_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var storyChosen = cb_news_story.SelectedIndex;
+            lbl_story_header.Text = news.older[storyChosen].title;
+            rtb_news_story.Text = news.older[storyChosen].description;
+        }
+
+        private void tab_Social_Enter(object sender, EventArgs e)
+        {
+            string jsonSocial = rest.getRESTData("/footer/");
+            Footer social = JToken.Parse(jsonSocial).ToObject<Footer>();
+
+            lbl_social_header.Text = social.social.title;
+            social_tweet.Text = social.social.tweet;
+            social_tweet_cred.Text = social.social.by;
+            twitter_header.Text = "Twitter";
+            facebook_header.Text = "Facebook";
+            quickLinks_header.Text = "QuickLinks";
+            twitter_link.Text = social.social.twitter;
+            fb_link.Text = social.social.facebook;
+
+
+            dgv_quicklinks.ColumnCount = 2;
+            dgv_quicklinks.Columns[0].Name = "Title";
+            dgv_quicklinks.Columns[1].Name = "Link";
+            dgv_quicklinks.Columns[1].Width = 400;
+            dgv_quicklinks.Rows.Clear();
+            for (var i = 0; i < social.quickLinks.Count; i++)
+            {
+                dgv_quicklinks.Rows.Add();
+
+                dgv_quicklinks.Rows[i].Cells[0].Value = social.quickLinks[i].title;
+                dgv_quicklinks.Rows[i].Cells[1].Value = social.quickLinks[i].href;
+            }
+        }
+
+        private void twitter_link_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://twitter.com/istatrit");
+        }
+
+        private void fb_link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.facebook.com/ISTatRIT");
         }
     } //end of class
 } // end of namespace
